@@ -41,8 +41,8 @@
 		$("button").click(function(event){
 			$.getJSON("result.json", function(jd) {
 				$("div").html('<p> Name: ' + jd.name + '</p>');
-				$("div").append('<p>Seat No : ' + jd.seat+ '</p>');
-				$("div").append('<p>Percentage: ' + jd.perc+ '</p>');
+				$("div").append('<p>Seat No : ' + jd.score+ '</p>');
+				$("div").append('<p>team: ' + jd.team+ '</p>');
 			});
 		});
 	});

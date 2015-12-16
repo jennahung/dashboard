@@ -51,28 +51,27 @@
 <script type="text/javascript" language="javascript">
   
     $(document).ready( function() {
-		$.getJSON(my.json,
-			function (data) {
-		    	var tr=[];
-		    		for (var i = 0; i < data.length; i++) {
-		        		tr.push('<tr>');
-		        		tr.push("<td>" + data[i].repo + "</td>");
-		        		tr.push("<td>" + data[i].maintainers + "</td>");
-		        		tr.push("<td>" + data[i].build_status + "</td>");
-						tr.push("<td>" + data[i].failed_test + "</td>");
-						tr.push("<td>" + data[i].test_report + "</td>");
-						tr.push("<td>" + data[i].open_reviews + "</td>");
-						tr.push("<td>" + data[i].open_reviews_ln + "</td>");
-		        		tr.push('</tr>');
+		$.getJSON('my.json',
+		function (data) {
+		    var tr;
+		    for (var i = 0; i < data.length; i++) {
+		        tr = $('<tr/>');
+		        tr.append("<td>" + data[i].repo + "</td>");
+		        tr.append("<td>" + data[i].maintainers + "</td>");
+		        tr.append("<td>" + data[i].build_status + "</td>");
+				tr.append("<td>" + data[i].failed_test + "</td>");
+				tr.append("<td>" + data[i].Data.test_report + "</td>");
+				tr.append("<td>" + data[i].open_reviews + "</td>");
+				tr.append("<td>" + data[i].open_reviews_ln + "</td>");
+		        $('table').append(tr);
 		    }
-		    $('repo_table').append($(tr.join('')));	
+		});
     });
 	
  </script>
   
 	
 <body>
-	
 	
 <button>CLICK</button>
 <table id="repo_table" class="table-style-one">

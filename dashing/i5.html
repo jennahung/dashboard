@@ -48,11 +48,28 @@
       });
    });
 </script>
-
+   
 <script type="text/javascript" language="javascript">
   
     $(document).ready( function() {
-	 $("button").click(function(event){
+		$.getJSON('result.json',
+		function (data) {
+		    var tr;
+		    for (var i = 0; i < data.length; i++) {
+		        tr = $('<tr/>');
+		        tr.append("<td>" + data[i].name + "</td>");
+		        tr.append("<td>" + data[i].seat + "</td>");
+		        tr.append("<td>" + data[i].perc + "</td>");
+		        $('result_table').append(tr);
+		    }
+		});
+    });
+ </script>
+
+<!--
+<script type="text/javascript" language="javascript">
+  
+    $(document).ready( function() {
 		$.getJSON('my.json',
 		function (data) {
 		    var tr;
@@ -68,16 +85,36 @@
 		        $('repo_table').append(tr);
 		    }
 		});
- });
     });
  </script>
+-->
 </head>
+
+
+	
 <body>
-   <div>
-          jQuery ajax getJSON method example
-   </div>
+	
 <button>CLICK</button>
 
+<table id="result_table" class="table-style-one">
+    <tr>
+      <th>name</th>
+      <th>seat</th>
+      <th>perc</th>
+    </tr>
+    <tr>
+      <td>Jill</td>
+      <td><a href="https://openswitch.net" target="_blank">Smith</a></td>
+      <td>50</td>
+    </tr>
+
+    <tr>
+      <td>Eve</td>
+      <td>Jackson</td>
+      <td>94</td>
+    </tr>
+ </table>
+ 
 <table id="repo_table" class="table-style-one">
     <tr>
       <th>Repo</th>
@@ -108,5 +145,7 @@
       <td>50</td>
     </tr>
  </table>
+
 </body>
+	
 </html>

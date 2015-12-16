@@ -39,8 +39,8 @@
 <p> Test Report for genericx86-64 </p>
 <p> Test Report for as5712 </p>
 
-<div style="overflow-x:auto;">
-    <table id="repo_status" class="table-style-one">
+
+<table id="repo_table" class="table-style-one">
     <tr>
       <th>Repo</th>
       <th>Maintainers</th>
@@ -80,19 +80,21 @@
       <td>67</td>
       <td>50</td>
     </tr>
+
+</table>
+
+<script>
 	
-	    <script>
-	
-		$.ajax({
-	    	url: 'my.json',
-	    	type: "post",
-	    	dataType: "json",
+	$.ajax({
+	    url: 'my.json',
+	    type: "post",
+	    dataType: "json",
 	    	
-	   	 success: function(data, textStatus, jqXHR) {
+	   	success: function(data, textStatus, jqXHR) {
 	      	  // since we are using jQuery, you don't need to parse response
-	       	 drawTable(data);
+	     drawTable(data);
 	    	}
-		});
+	});
 		
 		function drawTable(data) {
 		    for (var i = 0; i < data.length; i++) {
@@ -102,7 +104,7 @@
 
 		function drawRow(rowData) {
 		    var row = $("<tr />")
-		    $("#repo_status").append(row); //this will append tr element to table... keep its reference for a while since we will add cels into it
+		    $("#repo_table").append(row); //this will append tr element to table... keep its reference for a while since we will add cels into it
 		    row.append($("<td>" + rowData.repo + "</td>"));
 		    row.append($("<td>" + rowData.maintainers + "</td>"));
 		    row.append($("<td>" + rowData.build_status + "</td>"));
@@ -112,10 +114,8 @@
 			row.append($("<td><a href=" + rowData.open_reviews_ln + " target=_blank>here</a></td>"));
 		}
 		
-	    </script>
-  </table>
+</script>
 
-</div>
 
 </body>
 </html>

@@ -37,115 +37,31 @@
 <head>
 <title>the title</title>
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-<script type="text/javascript" language="javascript">
+
+<script type = "text/javascript" language = "javascript">
    $(document).ready(function() {
-      $("button").click(function(event){
-          $.getJSON("result.json", function(jd) {
-             $("div").html('<p> Name: ' + jd.name + '</p>');
-             $("div").append('<p>Seat No : ' + jd.seat+ '</p>');
-             $("div").append('<p>Percentage: ' + jd.perc+ '</p>');
-          });
+      $("#driver").click(function(event){
+		
+         $.getJSON('/jquery/result.json', function(jd) {
+            $('#stage').html('<p> Name: ' + jd.name + '</p>');
+            $('#stage').append('<p>Age : ' + jd.age+ '</p>');
+            $('#stage').append('<p> Sex: ' + jd.sex+ '</p>');
+         });
+			
       });
    });
 </script>
+</haed>
    
-<script type="text/javascript" language="javascript">
-  
-    $(document).ready( function() {
-		$.getJSON('result.json',
-		function (data) {
-		    var tr;
-		    for (var i = 0; i < data.length; i++) {
-		        tr = $('<tr/>');
-		        tr.append("<td>" + data[i].name + "</td>");
-		        tr.append("<td>" + data[i].seat + "</td>");
-		        tr.append("<td>" + data[i].perc + "</td>");
-		        $('result_table').append(tr);
-		    }
-		});
-    });
- </script>
-
-<!--
-<script type="text/javascript" language="javascript">
-  
-    $(document).ready( function() {
-		$.getJSON('my.json',
-		function (data) {
-		    var tr;
-		    for (var i = 0; i < data.length; i++) {
-		        tr = $('<tr/>');
-		        tr.append("<td>" + data[i].repo + "</td>");
-		        tr.append("<td>" + data[i].maintainers + "</td>");
-		        tr.append("<td>" + data[i].build_status + "</td>");
-				tr.append("<td>" + data[i].failed_test + "</td>");
-				tr.append("<td>" + data[i].Data.test_report + "</td>");
-				tr.append("<td>" + data[i].open_reviews + "</td>");
-				tr.append("<td>" + data[i].open_reviews_ln + "</td>");
-		        $('repo_table').append(tr);
-		    }
-		});
-    });
- </script>
--->
-</head>
-
-
-	
 <body>
 	
-<button>CLICK</button>
-
-<table id="result_table" class="table-style-one">
-    <tr>
-      <th>name</th>
-      <th>seat</th>
-      <th>perc</th>
-    </tr>
-    <tr>
-      <td>Jill</td>
-      <td><a href="https://openswitch.net" target="_blank">Smith</a></td>
-      <td>50</td>
-    </tr>
-
-    <tr>
-      <td>Eve</td>
-      <td>Jackson</td>
-      <td>94</td>
-    </tr>
- </table>
- 
-<table id="repo_table" class="table-style-one">
-    <tr>
-      <th>Repo</th>
-      <th>Maintainers</th>
-      <th>LastBuildStatus</th>
-      <th>FailedTest</th>
-      <th>TestReportLink</th>
-      <th>OpenReviews</th>
-      <th>OpenReviewsLink</th>
-    </tr>
-    <tr>
-      <td>Jill</td>
-      <td><a href="https://openswitch.net" target="_blank">Smith</a></td>
-      <td>50</td>
-      <td>50</td>
-      <td>50</td>
-      <td>50</td>
-      <td>50</td>
-    </tr>
-
-    <tr>
-      <td>Eve</td>
-      <td>Jackson</td>
-      <td>94</td>
-      <td>94</td>
-      <td>94</td>
-      <td>94</td>
-      <td>50</td>
-    </tr>
- </table>
-
+	<p>Click on the button to load result.json file −</p>	
+    <div id = "stage" style = "background-color:#eee;">
+         STAGE
+    </div>	
+    <input type = "button" id = "driver" value = "Load Data" />
+		
 </body>
-	
+
 </html>
+	

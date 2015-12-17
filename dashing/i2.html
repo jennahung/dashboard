@@ -12,7 +12,7 @@
       $("#driver").click(function(event){
          $.getJSON('my2.json', function(jd) {
             $('#stage').html('<p>Repo: ' + jd[2].repo + '</p>');
-            $('#stage').append('<p>Age : ' + jd[2].build_status+ '</p>');
+            $('#stage').append('<p>Age : ' + jd[2].test_report+ '</p>');
             $('#stage').append('<p> Sex: ' + jd[2].open_reviews+ '</p>');
          });
       });

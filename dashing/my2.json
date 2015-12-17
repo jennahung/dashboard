@@ -1,6 +1,9 @@
 [
 {"repo":"ops", "maintainers":"_", "build_status":"SUCCESS", "failed_test":"0", "test_report":"https://jenkins.openswitch.net/job/ops-gate/lastCompletedBuild/testReport/", "open_reviews":"81", "open_reviews_ln":"https://review.openswitch.net/#/q/project:openswitch/ops+status:open"},
+
 {"repo":"ops-aaa-utils", "maintainers":"_", "build_status":"SUCCESS", "failed_test":"0", "test_report":"https://jenkins.openswitch.net/job/ops-aaa-utils-gate-genericx86-64/lastCompletedBuild/testReport/", "open_reviews":"1", "open_reviews_ln":"https://review.openswitch.net/#/q/project:openswitch/ops-aaa-utils+status:open"},
+
 {"repo":"ops-ansible", "maintainers":"_", "build_status":"N/A", "failed_test":"N/A", "test_report":"N/A", "open_reviews":"0", "open_reviews_ln":"https://review.openswitch.net/#/q/project:openswitch/ops-ansible+status:open"},
-{"repo":"ops-arpmgrd", "maintainers":"_", "build_status":"SUCCESS", "failed_test":"0", "test_report":"https://jenkins.openswitch.net/job/ops-arpmgrd-gate-genericx86-64/lastCompletedBuild/testReport/", "open_reviews":"0", "open_reviews_ln":"https://review.openswitch.net/#/q/project:openswitch/ops-arpmgrd+status:open"},
+
+{"repo":"ops-arpmgrd", "maintainers":"_", "build_status":"SUCCESS", "failed_test":"0", "test_report":"https://jenkins.openswitch.net/job/ops-arpmgrd-gate-genericx86-64/lastCompletedBuild/testReport/", "open_reviews":"0", "open_reviews_ln":"https://review.openswitch.net/#/q/project:openswitch/ops-arpmgrd+status:open"}
 ]

@@ -11,9 +11,9 @@
 	  $.ajaxSetup({ cache: false });
       $("#driver").click(function(event){
          $.getJSON('result1.json', function(jd) {
-            $('#stage').html('<p> Name: ' + jd.name + '</p>');
-            $('#stage').append('<p>Age : ' + jd.age+ '</p>');
-            $('#stage').append('<p> Sex: ' + jd.sex+ '</p>');
+            $('#stage').html('<p> Name: ' + jd[0].name + '</p>');
+            $('#stage').append('<p>Age : ' + jd[0].age+ '</p>');
+            $('#stage').append('<p> Sex: ' + jd[0].sex+ '</p>');
          });
       });
 		

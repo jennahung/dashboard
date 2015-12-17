@@ -52,6 +52,30 @@
 		
    });
 </script>
+
+<script type="text/javascript" language="javascript">
+  
+    $(document).ready( function() {
+		$.getJSON('my.json',
+		function (data) {
+		    var tr;
+
+		    for (var i = 0; i < data.length; i++) {
+		        tr = $('<tr/>');
+		        tr.append("<td>" + data[i].repo + "</td>");
+		        tr.append("<td>" + data[i].maintainers + "</td>");
+		        tr.append("<td>" + data[i].build_status + "</td>");
+				tr.append("<td>" + data[i].failed_test + "</td>");
+				tr.append("<td>" + data[i].Data.test_report + "</td>");
+				tr.append("<td>" + data[i].open_reviews + "</td>");
+				tr.append("<td>" + data[i].open_reviews_ln + "</td>");
+		        $('repo_table').append(tr);
+		    }
+		});
+	});
+
+ </script>
+
 </head>
 
 	

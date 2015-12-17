@@ -41,4 +41,5 @@
 {"repo":"ops-vland", "maintainers":"shanmugamari.s@hpe.com ", "build_status":"SUCCESS", "failed_test":"0", "test_report":"https://jenkins.openswitch.net/job/ops-vland-gate-genericx86-64/lastCompletedBuild/testReport/", "open_reviews":"<a href=https://review.openswitch.net/#/q/project:openswitch/ops-vland+status:open target=_blank>0</a>"},
 {"repo":"ops-vsi", "maintainers":"payal.upadhyaya@hpe.com vincent.mendoza@hpe.com ", "build_status":"SUCCESS", "failed_test":"N/A", "test_report":"N/A", "open_reviews":"<a href=https://review.openswitch.net/#/q/project:openswitch/ops-vsi+status:open target=_blank>1</a>"},
 {"repo":"ops-webui", "maintainers":"al.harrington@hpe.com frank.wood@hp.com kelsey.dedoshka@hpe.com ", "build_status":"SUCCESS", "failed_test":"N/A", "test_report":"N/A", "open_reviews":"<a href=https://review.openswitch.net/#/q/project:openswitch/ops-webui+status:open target=_blank>0</a>"},
-{"repo":"_", "maintainers":"_", "build_status":"_", "failed_test":"_", "test_report":"_", "open_reviews":"_", "open_reviews_ln":"_"}]
+{"repo":"_", "maintainers":"_", "build_status":"_", "failed_test":"_", "test_report":"_", "open_reviews":"_", "open_reviews_ln":"_"}
+]

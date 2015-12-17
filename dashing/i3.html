@@ -62,15 +62,6 @@ function buildTable() {
     var write;
     $.each(response, function(index, table) {
 
-      write += '<tr>
-      <th>Repo</th>
-      <th>Maintainers</th>
-      <th>LastBuildStatus</th>
-      <th>FailedTest</th>
-      <th>TestReportLink</th>
-      <th>OpenReviews</th>
-      <th>OpenReviewsLink</th>
-    </tr>'
 
     write += '<tr><td>' + table.repo + '</td><td>' + table.maintainers + '</td><td>' + table.build_status + '</td><td>' + table.failed_test + '</td><td>' + table.test_report + '</td><td>' + table.open_reviews + '</td><td>' + table.open_reviews_ln + '</td></tr>';
 

@@ -9,7 +9,7 @@
     }
 
 	div.time {
-        font-family: verdana, arial, sans-serif, color: #333333;
+        font-family: verdana, arial, font-size: 12px;, sans-serif, color: #333333;
     }
 
 	table.table-style-one {
@@ -84,7 +84,7 @@
 	    	
 	   	success: function(data, textStatus, jqXHR) {
 	      	var write;
-	   		write = '<p>Data Last Updated : ' + data.time + '</p>' ;
+	   		write = '<p>Last Updated : ' + data.time + '</p>' ;
 	   		$('#section_time').html(write);
 	    	}
 	});

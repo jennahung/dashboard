@@ -64,7 +64,6 @@
 		        drawRow(data[i]);
 		    }
 		}
-
 		function drawRow(rowData) {
 		    var row = $("<tr />")
 		    $("#table_repo").append(row); //this will append tr element to table.
@@ -76,9 +75,7 @@
 			row.append($("<td>" + rowData.open_reviews + "</td>"));
 			row.append($("<td>" + rowData.maintainers + "</td>"));
 		}
-		
 </script>
-
 <script>
 	
 	$.ajax({
@@ -94,8 +91,8 @@
 	});
  	
 </script>
-
 </head>
+
 
 <body>
 
@@ -104,7 +101,7 @@
 <br>
 <h3>OpenSwitch Build Dashboard</h3>
 
-<div class="one">
+<div class="list_one">
 <ul>
   <li><a href="http://git.openswitch.net" target=_blank>Git Repositoy</a></li>
   <li><a href="http://review.openswitch.net" target=_blank>Gerrit, Revire System</a></li>

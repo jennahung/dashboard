@@ -2,9 +2,11 @@
 <html>
 
 <style type="text/css">
-	p {
+
+	div.section-style-one {
         font-family: verdana, arial, sans-serif, color: #333333;;
     }
+
 	table.table-style-one {
 		font-family: verdana, arial, sans-serif;
 		font-size: 11px;
@@ -56,7 +58,7 @@
 
 		function drawRow(rowData) {
 		    var row = $("<tr />")
-		    $("#repo_table").append(row); //this will append tr element to table.
+		    $("#table_repo").append(row); //this will append tr element to table.
 		    row.append($("<td>" + rowData.repo + "</td>"));
 		    row.append($("<td>" + rowData.build_status + "</td>"));
 			row.append($("<td>" + rowData.failed_test + "</td>"));
@@ -82,8 +84,8 @@
 
 	function writeBody(data) {    
 	   	var write;
-	   	write += "Data Last Updated : " + data.time ;
-	   	$('#p_area1').html(write);
+	   	write += "<p>Data Last Updated : " + data.time + "/p>" ;
+	   	$('#section_time').html(write);
 	}
 
 </script>
@@ -94,9 +96,10 @@
 
 <h2>OpenSwitch Build Dashboard</h2>
 
-<p id="p_area1"></p>
+<div id="section_time" class="section-style-one">
+</div>
 
-<table id="repo_table" class="table-style-one">
+<table id="table_repo" class="table-style-one">
     <tr>
       <th>Repo</th>
       <th>LastBuildStatus</th>

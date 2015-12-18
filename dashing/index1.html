@@ -38,7 +38,7 @@
 <script>
 	
 	$.ajax({
-	    url: './json_data/repo.json',
+	    url: '/json_data/repo.json',
 	    type: "post",
 	    dataType: "json",
 	    	
@@ -66,13 +66,34 @@
 		}
 		
 </script>
+
+<script>
+	
+	$.ajax({
+	    url: '/json_data/time.json',
+	    type: "post",
+	    dataType: "json",
+	    	
+	   	success: function(data, textStatus, jqXHR) {
+	      	 writeBody(data);
+	    	}
+	});
+
+	function writeBody(data) {    
+	   	var write;
+	   	write += "Data Last Updated : " + data.time ;
+	   	$('#p_area1').html(write);
+	}	
+</script>
+
+
 </head>
 
 <body>
 
 <h2>OpenSwitch Build Dashboard</h2>
-<p> Test Report for genericx86-64 </p>
-<p> Test Report for as5712 </p>
+
+<p id="p_area1"></p>
 
 
 <table id="repo_table" class="table-style-one">

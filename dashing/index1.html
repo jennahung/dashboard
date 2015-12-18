@@ -60,6 +60,7 @@
 		    row.append($("<td>" + rowData.repo + "</td>"));
 		    row.append($("<td>" + rowData.build_status + "</td>"));
 			row.append($("<td>" + rowData.failed_test + "</td>"));
+			row.append($("<td>" + rowData.total_test + "</td>"));
 			row.append($("<td>" + rowData.test_report + "</td>"));
 			row.append($("<td>" + rowData.open_reviews + "</td>"));
 			row.append($("<td>" + rowData.maintainers + "</td>"));
@@ -100,6 +101,7 @@
       <th>Repo</th>
       <th>LastBuildStatus</th>
       <th>FailedTest</th>
+      <th>Out of a total Tests</th>
       <th>TestReportLink</th>
       <th>OpenReviews</th>
       <th>Maintainers</th>

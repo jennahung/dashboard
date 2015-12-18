@@ -3,7 +3,7 @@
 
 <style type="text/css">
 	p {
-        font-family: verdana, arial, sans-serif;
+        font-family: verdana, arial, sans-serif, color: #333333;;
     }
 	table.table-style-one {
 		font-family: verdana, arial, sans-serif;
@@ -58,11 +58,11 @@
 		    var row = $("<tr />")
 		    $("#repo_table").append(row); //this will append tr element to table.
 		    row.append($("<td>" + rowData.repo + "</td>"));
-		    row.append($("<td>" + rowData.maintainers + "</td>"));
 		    row.append($("<td>" + rowData.build_status + "</td>"));
 			row.append($("<td>" + rowData.failed_test + "</td>"));
 			row.append($("<td>" + rowData.test_report + "</td>"));
 			row.append($("<td>" + rowData.open_reviews + "</td>"));
+			row.append($("<td>" + rowData.maintainers + "</td>"));
 		}
 		
 </script>
@@ -83,9 +83,9 @@
 	   	var write;
 	   	write += "Data Last Updated : " + data.time ;
 	   	$('#p_area1').html(write);
-	}	
-</script>
+	}
 
+</script>
 
 </head>
 

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<style type="text/css">
+
+    body {
+	padding-left: 3cm;
+	padding-right: 3cm;
+    }
+
+	div.time {
+        font-family: verdana, arial, sans-serif; font-size: 11px; color: #333333;
+    }
+
+    div.list_one{
+        font-family: verdana, arial, sans-serif; font-size: 12px; color: #FF6F3E;
+    }
+
+	table.table-style-one {
+		font-family: verdana, arial, sans-serif;
+		font-size: 11px;
+		color: #333333;
+		border-width: 1px;
+		border-color: #3A3A3A;
+		border-collapse: collapse;
+	}
+	table.table-style-one th {
+		border-width: 1px;
+		padding: 8px;
+		border-style: solid;
+		border-color: #517994;
+		background-color: #B2CFD8;
+	}
+	table.table-style-one tr:hover td {
+		background-color: #DFEBF1;
+	}
+	table.table-style-one td {
+		border-width: 1px;
+		padding: 8px;
+		border-style: solid;
+		border-color: #517994;
+		background-color: #ffffff;
+		max-width: 400px;
+	}
+</style>
+
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script>
+	
+	$.ajax({
+	    url: 'json_data/repo.json',
+	    type: "post",
+	    dataType: "json",
+	    	
+	   	success: function(data, textStatus, jqXHR) {
+	      	  // since we are using jQuery, you don't need to parse response
+	     drawTable(data);
+	    	}
+	});
+		
+		function drawTable(data) {
+		    for (var i = 0; i < data.length; i++) {
+		        drawRow(data[i]);
+		    }
+		}
+		function drawRow(rowData) {
+		    var row = $("<tr />")
+		    $("#table_repo").append(row); //this will append tr element to table.
+		    row.append($("<td>" + rowData.repo + "</td>"));
+		    row.append($("<td>" + rowData.build_status + "</td>"));
+			row.append($("<td>" + rowData.failed_test + "</td>"));
+			row.append($("<td>" + rowData.total_test + "</td>"));
+			row.append($("<td>" + rowData.test_report + "</td>"));
+			row.append($("<td>" + rowData.open_reviews + "</td>"));
+			row.append($("<td>" + rowData.maintainers + "</td>"));
+		}
+</script>
+<script>
+	
+	$.ajax({
+	    url: 'json_data/time.json',
+	    type: "post",
+	    dataType: "json",
+	    	
+	   	success: function(data, textStatus, jqXHR) {
+	      	var write;
+	   		write = '<p>Last Updated : ' + data.time + '</p>' ;
+	   		$('#section_time').html(write);
+	    	}
+	});
+ 	
+</script>
+</head>
+
+
+<body>
+
+<img src="img/title.png" align="left" width="180" height="50">
+<br>
+<br>
+<h3>OpenSwitch Build Dashboard</h3>
+
+<div class="list_one">
+<a href="http://git.openswitch.net" target=_blank>Git Repositoy</a> &nbsp; &nbsp;
+<a href="http://review.openswitch.net" target=_blank>Gerrit, Revire System</a> &nbsp; &nbsp;
+<a href="http://jenkins.openswitch.net" target=_blank>Jenkins, Build Machine</a> &nbsp; &nbsp;
+<a href="http://zuul.openswitch.net" target=_blank>Zull, Build scheduler</a> &nbsp; &nbsp;
+</div>
+<br>
+<div id="section_time" class="time">
+</div>
+
+<table id="table_repo" class="table-style-one">
+    <tr>
+      <th>Repo</th>
+      <th>LastBuildStatus</th>
+      <th>FailedTest</th>
+      <th>Total Tests</th>
+      <th>TestReportLink</th>
+      <th>OpenReviews</th>
+      <th>Maintainers</th>
+    </tr>
+
+</table>
+
+</body>
+</html>
